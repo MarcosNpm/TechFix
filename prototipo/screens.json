@@ -1,0 +1,218 @@
+[
+  {
+    "slug": "00-sistema-diseno",
+    "title": "Sistema de diseño",
+    "group": "Sistema",
+    "w": 1440,
+    "h": 1000,
+    "file": "00-sistema-diseno.svg"
+  },
+  {
+    "slug": "01-inicio",
+    "title": "Inicio · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1140,
+    "file": "01-inicio.svg"
+  },
+  {
+    "slug": "02-servicios",
+    "title": "Servicios · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1800,
+    "file": "02-servicios.svg"
+  },
+  {
+    "slug": "03-servicio-detalle",
+    "title": "Cambio de pantalla · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1240,
+    "file": "03-servicio-detalle.svg"
+  },
+  {
+    "slug": "04-solicitud",
+    "title": "Solicitud de reparación · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1360,
+    "file": "04-solicitud.svg"
+  },
+  {
+    "slug": "05-confirmacion",
+    "title": "Solicitud confirmada · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1140,
+    "file": "05-confirmacion.svg"
+  },
+  {
+    "slug": "06-seguimiento",
+    "title": "Seguimiento · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1240,
+    "file": "06-seguimiento.svg"
+  },
+  {
+    "slug": "07-tienda",
+    "title": "Tienda de repuestos · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1420,
+    "file": "07-tienda.svg"
+  },
+  {
+    "slug": "08-carrito",
+    "title": "Carrito · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1040,
+    "file": "08-carrito.svg"
+  },
+  {
+    "slug": "09-contacto",
+    "title": "Contacto · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1240,
+    "file": "09-contacto.svg"
+  },
+  {
+    "slug": "10-sobre-el-taller",
+    "title": "Sobre el taller · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1420,
+    "file": "10-sobre-el-taller.svg"
+  },
+  {
+    "slug": "11-login",
+    "title": "Ingresar · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 900,
+    "file": "11-login.svg"
+  },
+  {
+    "slug": "12-registro",
+    "title": "Crear cuenta · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1000,
+    "file": "12-registro.svg"
+  },
+  {
+    "slug": "13-dashboard-cliente",
+    "title": "Mi panel · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1290,
+    "file": "13-dashboard-cliente.svg"
+  },
+  {
+    "slug": "14-admin-panel",
+    "title": "Panel de administración · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1290,
+    "file": "14-admin-panel.svg"
+  },
+  {
+    "slug": "15-admin-servicios",
+    "title": "Gestión de servicios · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1138,
+    "file": "15-admin-servicios.svg"
+  },
+  {
+    "slug": "16-admin-reparaciones",
+    "title": "Gestión de reparaciones · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1084,
+    "file": "16-admin-reparaciones.svg"
+  },
+  {
+    "slug": "17-admin-usuarios",
+    "title": "Usuarios y roles · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1030,
+    "file": "17-admin-usuarios.svg"
+  },
+  {
+    "slug": "18-mvc-catalogo",
+    "title": "Catálogo MVC · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1120,
+    "file": "18-mvc-catalogo.svg"
+  },
+  {
+    "slug": "19-mvc-detalle",
+    "title": "Detalle MVC · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 900,
+    "file": "19-mvc-detalle.svg"
+  },
+  {
+    "slug": "20-framework-reporte",
+    "title": "Reporte de stock · Fat-Free",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 900,
+    "file": "20-framework-reporte.svg"
+  },
+  {
+    "slug": "21-framework-detalle",
+    "title": "Detalle de stock · Fat-Free",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 850,
+    "file": "21-framework-detalle.svg"
+  },
+  {
+    "slug": "22-404",
+    "title": "Página no encontrada · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 940,
+    "file": "22-404.svg"
+  },
+  {
+    "slug": "23-mapa-sitio",
+    "title": "Mapa del sitio · TechFix",
+    "group": "Escritorio",
+    "w": 1440,
+    "h": 1140,
+    "file": "23-mapa-sitio.svg"
+  },
+  {
+    "slug": "24-mobile-inicio",
+    "title": "Inicio móvil · TechFix",
+    "group": "Móvil",
+    "w": 390,
+    "h": 844,
+    "file": "24-mobile-inicio.svg"
+  },
+  {
+    "slug": "25-mobile-tienda",
+    "title": "Tienda móvil · TechFix",
+    "group": "Móvil",
+    "w": 390,
+    "h": 844,
+    "file": "25-mobile-tienda.svg"
+  },
+  {
+    "slug": "26-mobile-solicitud",
+    "title": "Solicitud móvil · TechFix",
+    "group": "Móvil",
+    "w": 390,
+    "h": 844,
+    "file": "26-mobile-solicitud.svg"
+  }
+]

@@ -24,3 +24,7 @@ clase5/data/mensajes.json
 
 # Capturas temporales
 /tmp/
+
+# Python
+__pycache__/
+*.py[cod]

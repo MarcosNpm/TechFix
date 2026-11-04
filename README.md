@@ -64,6 +64,34 @@ El archivo contiene el wideframe, el mapa del sitio y el mockup con la paleta, l
 jerarquía tipográfica y la estructura de pantallas que después se implementaron en PHP.
 Como respaldo, el mismo prototipo se conserva en [`docs/TP3.pdf`](docs/TP3.pdf).
 
+### Prototipo completo TP4–TP10
+
+Además del TP3, el repositorio incluye un prototipo de alta fidelidad con **27 pantallas**
+en tres formatos equivalentes:
+
+| Formato | Ubicación | Uso |
+| --- | --- | --- |
+| **A · Plugin de Figma** | [`figma-plugin/`](figma-plugin/) | Insertar todas las pantallas en el archivo de Figma con un clic |
+| **B · Pantallas SVG** | [`prototipo/svg/`](prototipo/svg/) | Archivos vectoriales sueltos, editables o imprimibles |
+| **C · Visor navegable** | [`prototipo/index.html`](prototipo/index.html) | Recorrer el prototipo en el navegador con menú, búsqueda y teclado |
+
+Para abrir el visor:
+
+```bash
+cd prototipo
+python3 -m http.server 8080
+# http://localhost:8080/index.html
+```
+
+Para importar el plugin en Figma: **Plugins → Development → Import plugin from manifest…**
+y seleccionar `figma-plugin/manifest.json`. Luego ejecutar **TechFix · Prototipo** desde
+**Plugins → Development**. El plugin crea (o reutiliza) la página `TechFix · Prototipo` y
+acomoda las 27 pantallas en una grilla con etiquetas.
+
+Instrucciones detalladas y listado de pantallas: [`prototipo/README.md`](prototipo/README.md).
+
+![Vista previa del prototipo](prototipo/vista-previa.png)
+
 ## Tecnologías
 
 | Capa | Herramienta |

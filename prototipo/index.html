@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechFix · Prototipo navegable</title>
+<style>
+  :root{
+    --dark:#1A1A2E; --dark2:#22223B; --cyan:#00A8CC; --cyan-dark:#007A99;
+    --cyan-soft:#E6F7FB; --bg:#F4F7F9; --text:#333333; --muted:#667085;
+    --border:#E2E8F0; --white:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:Inter,"Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;overflow:hidden}
+  a{color:inherit;text-decoration:none}
+  header.top{height:64px;background:var(--dark);color:#fff;display:flex;align-items:center;gap:18px;padding:0 24px;flex:0 0 auto}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.4px}
+  .brand .mark{width:34px;height:34px;border-radius:11px;background:var(--dark2);display:grid;place-items:center;color:var(--cyan)}
+  .brand b{color:#fff}.brand span{color:var(--cyan)}
+  .top .tag{font-size:10px;font-weight:700;letter-spacing:1px;background:rgba(0,168,204,.16);color:var(--cyan);padding:6px 10px;border-radius:99px;text-transform:uppercase}
+  .top .spacer{flex:1}
+  .top .meta{font-size:12px;color:#AAB4C4}
+  .top .meta strong{color:#fff}
+  .layout{display:flex;flex:1;min-height:0}
+  aside{width:318px;flex:0 0 auto;background:var(--white);border-right:1px solid var(--border);display:flex;flex-direction:column;min-height:0}
+  .search{padding:14px 16px;border-bottom:1px solid var(--border)}
+  .search input{width:100%;border:1px solid var(--border);background:var(--bg);border-radius:9px;padding:9px 12px;font:inherit;font-size:12px;color:var(--text);outline:none}
+  .search input:focus{border-color:var(--cyan)}
+  .nav{overflow:auto;padding:10px 10px 24px}
+  .group{margin-top:12px}
+  .group h3{margin:0 0 6px;padding:0 10px;font-size:9px;letter-spacing:1.3px;color:#98A2B3;text-transform:uppercase}
+  .item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;cursor:pointer;border:0;background:none;width:100%;text-align:left;font:inherit;color:var(--text)}
+  .item:hover{background:var(--bg)}
+  .item.active{background:var(--cyan-soft);color:var(--cyan-dark);font-weight:700}
+  .item .num{font-size:10px;font-weight:700;color:#98A2B3;min-width:22px}
+  .item.active .num{color:var(--cyan-dark)}
+  .item .label{font-size:12px;line-height:1.25}
+  .item .dims{margin-left:auto;font-size:9px;color:#B0B9C6;white-space:nowrap}
+  main{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0}
+  .toolbar{height:58px;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;padding:0 20px;flex:0 0 auto}
+  .toolbar .title{font-size:13px;font-weight:700;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .toolbar .count{font-size:11px;color:var(--muted);white-space:nowrap}
+  .toolbar .flow{display:flex;align-items:center;gap:4px;flex-wrap:wrap;flex:1;justify-content:center}
+  .chip{border:1px solid var(--border);background:var(--white);color:var(--muted);font:inherit;font-size:10px;font-weight:600;padding:5px 9px;border-radius:99px;cursor:pointer;white-space:nowrap}
+  .chip:hover{border-color:var(--cyan);color:var(--cyan-dark)}
+  .chip.active{background:var(--dark);border-color:var(--dark);color:#fff}
+  .actions{display:flex;align-items:center;gap:8px}
+  .btn{border:1px solid var(--border);background:var(--white);color:var(--text);font:inherit;font-size:11px;font-weight:600;padding:7px 12px;border-radius:8px;cursor:pointer}
+  .btn:hover{border-color:var(--cyan);color:var(--cyan-dark)}
+  .btn.primary{background:var(--cyan);border-color:var(--cyan);color:#fff}
+  .btn.primary:hover{background:var(--cyan-dark);border-color:var(--cyan-dark);color:#fff}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .stage{flex:1;overflow:auto;padding:26px;background:
+     radial-gradient(circle at 18% 12%,rgba(0,168,204,.07),transparent 40%),
+     radial-gradient(circle at 86% 88%,rgba(26,26,46,.06),transparent 45%),#EDF2F5;
+     display:flex;align-items:flex-start;justify-content:center}
+  .canvas{background:var(--white);border-radius:6px;box-shadow:0 18px 50px rgba(15,23,42,.16);overflow:hidden;max-width:100%;line-height:0}
+  .canvas img{display:block;max-width:100%;height:auto}
+  .hint{font-size:10px;color:#98A2B3;padding:0 0 8px;text-align:center}
+  .stage-inner{max-width:100%;display:flex;flex-direction:column;align-items:center}
+  .empty{padding:60px;color:var(--muted);font-size:13px}
+  .mobile-toggle{display:none}
+  @media(max-width:1080px){
+    .toolbar .flow{display:none}
+    aside{position:fixed;left:0;top:64px;bottom:0;z-index:20;transform:translateX(-100%);transition:transform .2s;box-shadow:0 10px 40px rgba(0,0,0,.18)}
+    aside.open{transform:none}
+    .mobile-toggle{display:inline-block}
+  }
+  @media(max-width:640px){
+    header.top{padding:0 14px;gap:10px}.top .meta{display:none}.top .tag{display:none}
+    .stage{padding:12px}.toolbar{padding:0 10px;gap:8px}.toolbar .title{display:none}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.7-.7-.7-2.7z"/></svg></span><b>Tech</b><span>Fix</span></div>
+  <span class="tag">Prototipo UI · TP4–TP10</span>
+  <div class="spacer"></div>
+  <div class="meta"><strong>27</strong> pantallas · 1440 / 390 px · 04/11/2026</div>
+</header>
+
+<div class="layout">
+  <aside id="sidebar">
+    <div class="search"><input id="q" type="search" placeholder="Buscar pantalla…" autocomplete="off"></div>
+    <nav class="nav" id="nav"><div class="group"><h3>Sistema</h3>
+<button class="item" data-slug="00-sistema-diseno" data-title="Sistema de diseño"><span class="num">01</span><span class="label">Sistema de diseño</span><span class="dims">1440px</span></button>
+</div>
+<div class="group"><h3>Escritorio</h3>
+<button class="item" data-slug="01-inicio" data-title="Inicio · TechFix"><span class="num">02</span><span class="label">Inicio · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="02-servicios" data-title="Servicios · TechFix"><span class="num">03</span><span class="label">Servicios · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="03-servicio-detalle" data-title="Cambio de pantalla · TechFix"><span class="num">04</span><span class="label">Cambio de pantalla · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="04-solicitud" data-title="Solicitud de reparación · TechFix"><span class="num">05</span><span class="label">Solicitud de reparación · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="05-confirmacion" data-title="Solicitud confirmada · TechFix"><span class="num">06</span><span class="label">Solicitud confirmada · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="06-seguimiento" data-title="Seguimiento · TechFix"><span class="num">07</span><span class="label">Seguimiento · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="07-tienda" data-title="Tienda de repuestos · TechFix"><span class="num">08</span><span class="label">Tienda de repuestos · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="08-carrito" data-title="Carrito · TechFix"><span class="num">09</span><span class="label">Carrito · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="09-contacto" data-title="Contacto · TechFix"><span class="num">10</span><span class="label">Contacto · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="10-sobre-el-taller" data-title="Sobre el taller · TechFix"><span class="num">11</span><span class="label">Sobre el taller · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="11-login" data-title="Ingresar · TechFix"><span class="num">12</span><span class="label">Ingresar · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="12-registro" data-title="Crear cuenta · TechFix"><span class="num">13</span><span class="label">Crear cuenta · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="13-dashboard-cliente" data-title="Mi panel · TechFix"><span class="num">14</span><span class="label">Mi panel · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="14-admin-panel" data-title="Panel de administración · TechFix"><span class="num">15</span><span class="label">Panel de administración · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="15-admin-servicios" data-title="Gestión de servicios · TechFix"><span class="num">16</span><span class="label">Gestión de servicios · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="16-admin-reparaciones" data-title="Gestión de reparaciones · TechFix"><span class="num">17</span><span class="label">Gestión de reparaciones · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="17-admin-usuarios" data-title="Usuarios y roles · TechFix"><span class="num">18</span><span class="label">Usuarios y roles · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="18-mvc-catalogo" data-title="Catálogo MVC · TechFix"><span class="num">19</span><span class="label">Catálogo MVC · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="19-mvc-detalle" data-title="Detalle MVC · TechFix"><span class="num">20</span><span class="label">Detalle MVC · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="20-framework-reporte" data-title="Reporte de stock · Fat-Free"><span class="num">21</span><span class="label">Reporte de stock · Fat-Free</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="21-framework-detalle" data-title="Detalle de stock · Fat-Free"><span class="num">22</span><span class="label">Detalle de stock · Fat-Free</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="22-404" data-title="Página no encontrada · TechFix"><span class="num">23</span><span class="label">Página no encontrada · TechFix</span><span class="dims">1440px</span></button>
+<button class="item" data-slug="23-mapa-sitio" data-title="Mapa del sitio · TechFix"><span class="num">24</span><span class="label">Mapa del sitio · TechFix</span><span class="dims">1440px</span></button>
+</div>
+<div class="group"><h3>Móvil</h3>
+<button class="item" data-slug="24-mobile-inicio" data-title="Inicio móvil · TechFix"><span class="num">25</span><span class="label">Inicio móvil · TechFix</span><span class="dims">390px</span></button>
+<button class="item" data-slug="25-mobile-tienda" data-title="Tienda móvil · TechFix"><span class="num">26</span><span class="label">Tienda móvil · TechFix</span><span class="dims">390px</span></button>
+<button class="item" data-slug="26-mobile-solicitud" data-title="Solicitud móvil · TechFix"><span class="num">27</span><span class="label">Solicitud móvil · TechFix</span><span class="dims">390px</span></button>
+</div></nav>
+  </aside>
+
+  <main>
+    <div class="toolbar">
+      <button class="btn mobile-toggle" id="menu" aria-label="Menú">☰</button>
+      <div>
+        <div class="title" id="title">—</div>
+        <div class="count" id="count">—</div>
+      </div>
+      <div class="flow" id="flow"><button class="chip" data-slug="01-inicio">Inicio</button><button class="chip" data-slug="02-servicios">Servicios</button><button class="chip" data-slug="04-solicitud">Solicitud</button><button class="chip" data-slug="06-seguimiento">Seguimiento</button><button class="chip" data-slug="07-tienda">Tienda</button><button class="chip" data-slug="13-dashboard-cliente">Mi panel</button><button class="chip" data-slug="14-admin-panel">Admin</button></div>
+      <div class="actions">
+        <a class="btn" id="open" href="#" target="_blank" rel="noopener">Abrir SVG</a>
+        <button class="btn" id="prev" aria-label="Anterior">‹ Anterior</button>
+        <button class="btn primary" id="next" aria-label="Siguiente">Siguiente ›</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="stage-inner">
+        <div class="hint">Usá ← → para recorrer · los enlaces del menú del sitio también funcionan al abrir el SVG</div>
+        <div class="canvas"><img id="shot" alt="Pantalla del prototipo"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const SCREENS = [{"slug": "00-sistema-diseno", "title": "Sistema de diseño", "group": "Sistema", "w": 1440, "h": 1000, "file": "00-sistema-diseno.svg"}, {"slug": "01-inicio", "title": "Inicio · TechFix", "group": "Escritorio", "w": 1440, "h": 1140, "file": "01-inicio.svg"}, {"slug": "02-servicios", "title": "Servicios · TechFix", "group": "Escritorio", "w": 1440, "h": 1800, "file": "02-servicios.svg"}, {"slug": "03-servicio-detalle", "title": "Cambio de pantalla · TechFix", "group": "Escritorio", "w": 1440, "h": 1240, "file": "03-servicio-detalle.svg"}, {"slug": "04-solicitud", "title": "Solicitud de reparación · TechFix", "group": "Escritorio", "w": 1440, "h": 1360, "file": "04-solicitud.svg"}, {"slug": "05-confirmacion", "title": "Solicitud confirmada · TechFix", "group": "Escritorio", "w": 1440, "h": 1140, "file": "05-confirmacion.svg"}, {"slug": "06-seguimiento", "title": "Seguimiento · TechFix", "group": "Escritorio", "w": 1440, "h": 1240, "file": "06-seguimiento.svg"}, {"slug": "07-tienda", "title": "Tienda de repuestos · TechFix", "group": "Escritorio", "w": 1440, "h": 1420, "file": "07-tienda.svg"}, {"slug": "08-carrito", "title": "Carrito · TechFix", "group": "Escritorio", "w": 1440, "h": 1040, "file": "08-carrito.svg"}, {"slug": "09-contacto", "title": "Contacto · TechFix", "group": "Escritorio", "w": 1440, "h": 1240, "file": "09-contacto.svg"}, {"slug": "10-sobre-el-taller", "title": "Sobre el taller · TechFix", "group": "Escritorio", "w": 1440, "h": 1420, "file": "10-sobre-el-taller.svg"}, {"slug": "11-login", "title": "Ingresar · TechFix", "group": "Escritorio", "w": 1440, "h": 900, "file": "11-login.svg"}, {"slug": "12-registro", "title": "Crear cuenta · TechFix", "group": "Escritorio", "w": 1440, "h": 1000, "file": "12-registro.svg"}, {"slug": "13-dashboard-cliente", "title": "Mi panel · TechFix", "group": "Escritorio", "w": 1440, "h": 1290, "file": "13-dashboard-cliente.svg"}, {"slug": "14-admin-panel", "title": "Panel de administración · TechFix", "group": "Escritorio", "w": 1440, "h": 1290, "file": "14-admin-panel.svg"}, {"slug": "15-admin-servicios", "title": "Gestión de servicios · TechFix", "group": "Escritorio", "w": 1440, "h": 1138, "file": "15-admin-servicios.svg"}, {"slug": "16-admin-reparaciones", "title": "Gestión de reparaciones · TechFix", "group": "Escritorio", "w": 1440, "h": 1084, "file": "16-admin-reparaciones.svg"}, {"slug": "17-admin-usuarios", "title": "Usuarios y roles · TechFix", "group": "Escritorio", "w": 1440, "h": 1030, "file": "17-admin-usuarios.svg"}, {"slug": "18-mvc-catalogo", "title": "Catálogo MVC · TechFix", "group": "Escritorio", "w": 1440, "h": 1120, "file": "18-mvc-catalogo.svg"}, {"slug": "19-mvc-detalle", "title": "Detalle MVC · TechFix", "group": "Escritorio", "w": 1440, "h": 900, "file": "19-mvc-detalle.svg"}, {"slug": "20-framework-reporte", "title": "Reporte de stock · Fat-Free", "group": "Escritorio", "w": 1440, "h": 900, "file": "20-framework-reporte.svg"}, {"slug": "21-framework-detalle", "title": "Detalle de stock · Fat-Free", "group": "Escritorio", "w": 1440, "h": 850, "file": "21-framework-detalle.svg"}, {"slug": "22-404", "title": "Página no encontrada · TechFix", "group": "Escritorio", "w": 1440, "h": 940, "file": "22-404.svg"}, {"slug": "23-mapa-sitio", "title": "Mapa del sitio · TechFix", "group": "Escritorio", "w": 1440, "h": 1140, "file": "23-mapa-sitio.svg"}, {"slug": "24-mobile-inicio", "title": "Inicio móvil · TechFix", "group": "Móvil", "w": 390, "h": 844, "file": "24-mobile-inicio.svg"}, {"slug": "25-mobile-tienda", "title": "Tienda móvil · TechFix", "group": "Móvil", "w": 390, "h": 844, "file": "25-mobile-tienda.svg"}, {"slug": "26-mobile-solicitud", "title": "Solicitud móvil · TechFix", "group": "Móvil", "w": 390, "h": 844, "file": "26-mobile-solicitud.svg"}];
+const FLOW = [{"label": "Inicio", "slug": "01-inicio"}, {"label": "Servicios", "slug": "02-servicios"}, {"label": "Solicitud", "slug": "04-solicitud"}, {"label": "Seguimiento", "slug": "06-seguimiento"}, {"label": "Tienda", "slug": "07-tienda"}, {"label": "Mi panel", "slug": "13-dashboard-cliente"}, {"label": "Admin", "slug": "14-admin-panel"}];
+let index = 0;
+
+const els = {
+  nav: document.getElementById('nav'),
+  title: document.getElementById('title'),
+  count: document.getElementById('count'),
+  shot: document.getElementById('shot'),
+  open: document.getElementById('open'),
+  prev: document.getElementById('prev'),
+  next: document.getElementById('next'),
+  flow: document.getElementById('flow'),
+  q: document.getElementById('q'),
+  sidebar: document.getElementById('sidebar'),
+};
+
+function find(slug){ return SCREENS.findIndex(s => s.slug === slug); }
+
+function render(){
+  const s = SCREENS[index];
+  els.title.textContent = s.title;
+  els.count.textContent = String(index + 1).padStart(2,'0') + ' / ' + SCREENS.length + ' · ' + s.group + ' · ' + s.w + '×' + s.h;
+  els.shot.src = 'svg/' + s.file;
+  els.shot.alt = s.title;
+  els.shot.style.width = s.w < 600 ? '470px' : 'auto';
+  els.open.href = 'svg/' + s.file;
+  els.prev.disabled = index === 0;
+  els.next.disabled = index === SCREENS.length - 1;
+  document.title = s.title + ' · TechFix';
+  document.querySelectorAll('.item').forEach(el => {
+    el.classList.toggle('active', el.dataset.slug === s.slug);
+  });
+  document.querySelectorAll('.chip').forEach(el => {
+    el.classList.toggle('active', el.dataset.slug === s.slug);
+  });
+  const active = document.querySelector('.item.active');
+  if (active) active.scrollIntoView({block:'nearest'});
+  const chip = document.querySelector('.chip.active');
+  if (chip) chip.scrollIntoView({inline:'center', block:'nearest'});
+  if (location.hash.slice(1) !== s.slug) history.replaceState(null, '', '#' + s.slug);
+}
+
+function go(slug){
+  const i = find(slug);
+  if (i >= 0){ index = i; render(); }
+}
+
+document.querySelectorAll('.item').forEach(el => {
+  el.addEventListener('click', () => {
+    go(el.dataset.slug);
+    els.sidebar.classList.remove('open');
+  });
+});
+document.querySelectorAll('.chip').forEach(el => {
+  el.addEventListener('click', () => go(el.dataset.slug));
+});
+els.prev.addEventListener('click', () => { if (index > 0){ index--; render(); } });
+els.next.addEventListener('click', () => { if (index < SCREENS.length - 1){ index++; render(); } });
+els.q.addEventListener('input', () => {
+  const term = els.q.value.trim().toLowerCase();
+  document.querySelectorAll('.item').forEach(el => {
+    const hay = (el.dataset.title + ' ' + el.dataset.slug).toLowerCase();
+    el.style.display = !term || hay.includes(term) ? '' : 'none';
+  });
+  document.querySelectorAll('.group').forEach(g => {
+    const visible = [...g.querySelectorAll('.item')].some(i => i.style.display !== 'none');
+    g.style.display = visible ? '' : 'none';
+  });
+});
+document.getElementById('menu').addEventListener('click', () => els.sidebar.classList.toggle('open'));
+window.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowRight' && index < SCREENS.length - 1){ index++; render(); }
+  if (e.key === 'ArrowLeft' && index > 0){ index--; render(); }
+});
+window.addEventListener('hashchange', () => go(location.hash.slice(1)));
+
+const initial = find(location.hash.slice(1));
+index = initial >= 0 ? initial : Math.max(0, find('01-inicio'));
+render();
+</script>
+</body>
+</html>
