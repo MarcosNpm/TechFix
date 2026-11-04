@@ -56,12 +56,13 @@ menú responsive.
 
 ## Prototipo de Figma
 
-El diseño original del TP3 (wideframe, mapa del sitio y mockup) se conserva en
-[`docs/TP3.pdf`](docs/TP3.pdf). Allí están la paleta, la jerarquía tipográfica y la
-estructura de pantallas que después se implementaron en PHP.
+Diseño original del TP3 en Figma:
 
-> El prototipo se entregó en PDF durante la cursada. No existe un enlace público de
-> Figma asociado a este repositorio; el PDF es la referencia de diseño disponible.
+**https://www.figma.com/design/b1An3nGup8IbJxsslpADP1/Sin-t%C3%ADtulo?node-id=0-1&t=07vCYqtj2oXWJaKv-1**
+
+El archivo contiene el wideframe, el mapa del sitio y el mockup con la paleta, la
+jerarquía tipográfica y la estructura de pantallas que después se implementaron en PHP.
+Como respaldo, el mismo prototipo se conserva en [`docs/TP3.pdf`](docs/TP3.pdf).
 
 ## Tecnologías
 
@@ -716,8 +717,9 @@ git merge feature/migracion-php-ssi
 - El proyecto no usa Composer: Fat-Free está incluido en `framework/lib/` para que
   funcione en cualquier XAMPP sin instalar dependencias.
 - Las capturas se generaron con Chromium y datos reales de la base.
-- El enlace público de Figma del TP3 no está disponible; el prototipo se documenta
-  en `docs/TP3.pdf` y se refleja en el sitio actual.
+- El prototipo de Figma del TP3 está disponible en
+  <https://www.figma.com/design/b1An3nGup8IbJxsslpADP1/Sin-t%C3%ADtulo?node-id=0-1&t=07vCYqtj2oXWJaKv-1>
+  y se conserva como respaldo en `docs/TP3.pdf`.
 - La publicación en GitHub requiere credenciales del repositorio
   <https://github.com/MarcosNpm/Techfix>. El historial local queda preparado con los
   commits de cada TP.
