@@ -14,11 +14,12 @@ base de datos relacional, CRUD con PDO, autenticación, una API JSON y dos módu
 ## Índice
 
 1. [Descripción](#descripción)
-2. [Tecnologías](#tecnologías)
-3. [Puesta en marcha](#puesta-en-marcha)
-4. [Credenciales de prueba](#credenciales-de-prueba)
-5. [Estructura del proyecto](#estructura-del-proyecto)
-6. [Recorrido por los trabajos prácticos](#recorrido-por-los-trabajos-prácticos)
+2. [Prototipo de Figma](#prototipo-de-figma)
+3. [Tecnologías](#tecnologías)
+4. [Puesta en marcha](#puesta-en-marcha)
+5. [Credenciales de prueba](#credenciales-de-prueba)
+6. [Estructura del proyecto](#estructura-del-proyecto)
+7. [Recorrido por los trabajos prácticos](#recorrido-por-los-trabajos-prácticos)
    - [TP4 · Migración a PHP e includes](#tp4--migración-a-php-e-includes)
    - [TP5 · Formularios POST y GET](#tp5--formularios-post-y-get)
    - [TP6 · Base de datos y normalización](#tp6--base-de-datos-y-normalización)
@@ -26,12 +27,13 @@ base de datos relacional, CRUD con PDO, autenticación, una API JSON y dos módu
    - [TP8 · Autenticación y roles](#tp8--autenticación-y-roles)
    - [TP9 · API JSON con Fetch](#tp9--api-json-con-fetch)
    - [TP10 · MVC nativo y framework](#tp10--mvc-nativo-y-framework)
-7. [Rutas principales](#rutas-principales)
-8. [Seguridad aplicada](#seguridad-aplicada)
-9. [Capturas](#capturas)
-10. [Flujo de Git](#flujo-de-git)
-11. [Pruebas realizadas](#pruebas-realizadas)
-12. [Notas y limitaciones](#notas-y-limitaciones)
+8. [Rutas principales](#rutas-principales)
+9. [Seguridad aplicada](#seguridad-aplicada)
+10. [Capturas](#capturas)
+11. [Flujo de Git](#flujo-de-git)
+12. [Pruebas realizadas](#pruebas-realizadas)
+13. [Notas y limitaciones](#notas-y-limitaciones)
+14. [Documento de entrega en DOCX/PDF](#documento-de-entrega-en-docxpdf)
 
 ---
 
@@ -51,6 +53,15 @@ El diseño mantiene la identidad definida en el TP3: paleta **#1A1A2E**, **#00A8
 menú responsive.
 
 ---
+
+## Prototipo de Figma
+
+El diseño original del TP3 (wideframe, mapa del sitio y mockup) se conserva en
+[`docs/TP3.pdf`](docs/TP3.pdf). Allí están la paleta, la jerarquía tipográfica y la
+estructura de pantallas que después se implementaron en PHP.
+
+> El prototipo se entregó en PDF durante la cursada. No existe un enlace público de
+> Figma asociado a este repositorio; el PDF es la referencia de diseño disponible.
 
 ## Tecnologías
 
@@ -249,7 +260,11 @@ TechFix/
 │   ├── lib/                   # Fat-Free 3.9.3 incluido
 │   └── .htaccess              # Rewrite para Apache
 │
-├── docs/capturas/             # Evidencias 01 a 31
+├── docs/
+│   ├── capturas/              # Evidencias 01 a 31
+│   ├── TP3.pdf                # Prototipo de diseño
+│   ├── TechFix_Documentacion_TP4-TP10.docx
+│   └── TechFix_Documentacion_TP4-TP10.pdf
 ├── .env.example
 ├── .gitignore
 └── README.md
@@ -706,6 +721,19 @@ git merge feature/migracion-php-ssi
 - La publicación en GitHub requiere credenciales del repositorio
   <https://github.com/MarcosNpm/Techfix>. El historial local queda preparado con los
   commits de cada TP.
+
+---
+
+## Documento de entrega en DOCX/PDF
+
+Además de este README, la documentación completa de los TP4 a TP10 está disponible en:
+
+- [`docs/TechFix_Documentacion_TP4-TP10.docx`](docs/TechFix_Documentacion_TP4-TP10.docx)
+- [`docs/TechFix_Documentacion_TP4-TP10.pdf`](docs/TechFix_Documentacion_TP4-TP10.pdf)
+
+El documento incluye portada, índice, descripción del proyecto, instalación, credenciales,
+explicación de cada trabajo práctico, tablas de requisitos, fragmentos de código y las **31
+capturas embebidas**. Sirve como respaldo escrito para la entrega en Google Classroom.
 
 ---
 
