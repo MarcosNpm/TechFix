@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-label="Memoria RAM">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E9F9FC"/><stop offset="1" stop-color="#F4F7F9"/>
+    </linearGradient>
+    <linearGradient id="ram" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#252542"/><stop offset="1" stop-color="#1A1A2E"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="260" fill="url(#bg)"/>
+  <circle cx="304" cy="50" r="46" fill="#00A8CC" opacity=".1"/>
+  <g transform="translate(36 78) rotate(-4 144 52)">
+    <rect x="0" y="10" width="288" height="84" rx="10" fill="url(#ram)"/>
+    <g fill="#00A8CC" opacity=".85">
+      <rect x="18" y="26" width="22" height="30" rx="3"/><rect x="48" y="26" width="22" height="30" rx="3"/><rect x="78" y="26" width="22" height="30" rx="3"/><rect x="108" y="26" width="22" height="30" rx="3"/><rect x="138" y="26" width="22" height="30" rx="3"/><rect x="168" y="26" width="22" height="30" rx="3"/><rect x="198" y="26" width="22" height="30" rx="3"/><rect x="228" y="26" width="22" height="30" rx="3"/>
+    </g>
+    <rect x="18" y="66" width="252" height="8" rx="4" fill="#F4F7F9" opacity=".16"/>
+    <g fill="#F4F7F9" opacity=".55">
+      <rect x="16" y="94" width="6" height="10"/><rect x="30" y="94" width="6" height="10"/><rect x="44" y="94" width="6" height="10"/><rect x="58" y="94" width="6" height="10"/><rect x="72" y="94" width="6" height="10"/><rect x="86" y="94" width="6" height="10"/><rect x="100" y="94" width="6" height="10"/><rect x="114" y="94" width="6" height="10"/><rect x="128" y="94" width="6" height="10"/><rect x="142" y="94" width="6" height="10"/><rect x="156" y="94" width="6" height="10"/><rect x="170" y="94" width="6" height="10"/><rect x="184" y="94" width="6" height="10"/><rect x="198" y="94" width="6" height="10"/><rect x="212" y="94" width="6" height="10"/><rect x="226" y="94" width="6" height="10"/><rect x="240" y="94" width="6" height="10"/><rect x="254" y="94" width="6" height="10"/>
+    </g>
+  </g>
+</svg>

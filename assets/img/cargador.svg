@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-label="Cargador y cable">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E9F9FC"/><stop offset="1" stop-color="#F4F7F9"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="260" fill="url(#bg)"/>
+  <circle cx="310" cy="214" r="54" fill="#00A8CC" opacity=".09"/>
+  <g transform="translate(72 62)">
+    <rect x="16" y="24" width="150" height="104" rx="20" fill="#fff" stroke="#1A1A2E" stroke-width="3"/>
+    <rect x="34" y="42" width="58" height="42" rx="8" fill="#00A8CC" opacity=".18"/>
+    <path d="M63 50l-9 18h9l-3 14 13-19h-8l4-13" fill="#00A8CC"/>
+    <rect x="112" y="44" width="34" height="12" rx="5" fill="#1A1A2E" opacity=".82"/>
+    <rect x="112" y="64" width="34" height="12" rx="5" fill="#1A1A2E" opacity=".82"/>
+    <path d="M166 56c38 0 38 54 0 54s-38 54 0 54h44" fill="none" stroke="#1A1A2E" stroke-width="7" stroke-linecap="round"/>
+    <rect x="206" y="146" width="24" height="38" rx="6" fill="#1A1A2E"/>
+  </g>
+  <g fill="none" stroke="#00A8CC" stroke-width="3" stroke-linecap="round" opacity=".5">
+    <path d="M48 78h18M48 90h10M284 60h20M284 72h12"/>
+  </g>
+</svg>
