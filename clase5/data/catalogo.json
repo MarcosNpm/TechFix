@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cambio de pantalla",
+    "categoria": "Celulares",
+    "descripcion": "Reemplazo de módulo LCD/OLED con garantía de 90 días.",
+    "precio": 45000
+  },
+  {
+    "id": 2,
+    "nombre": "Cambio de batería",
+    "categoria": "Celulares",
+    "descripcion": "Batería nueva con control de ciclos y prueba de carga.",
+    "precio": 28000
+  },
+  {
+    "id": 3,
+    "nombre": "Limpieza y mantenimiento",
+    "categoria": "Computadoras",
+    "descripcion": "Cambio de pasta térmica, limpieza de cooler y diagnóstico.",
+    "precio": 22000
+  },
+  {
+    "id": 4,
+    "nombre": "Instalación de SSD",
+    "categoria": "Computadoras",
+    "descripcion": "Migración de datos, instalación de SSD y optimización del sistema.",
+    "precio": 18000
+  },
+  {
+    "id": 5,
+    "nombre": "Recuperación de datos",
+    "categoria": "Almacenamiento",
+    "descripcion": "Recuperación de archivos en discos rígidos, SSD y pendrives.",
+    "precio": 35000
+  },
+  {
+    "id": 6,
+    "nombre": "Reparación de cargador",
+    "categoria": "Electrónica",
+    "descripcion": "Diagnóstico y reparación de fuentes y cargadores con soldadura.",
+    "precio": 15000
+  },
+  {
+    "id": 7,
+    "nombre": "Reparación de teclado",
+    "categoria": "Computadoras",
+    "descripcion": "Cambio de teclas, membrana o teclado completo en notebooks.",
+    "precio": 26000
+  },
+  {
+    "id": 8,
+    "nombre": "Reparación de auriculares",
+    "categoria": "Electrónica",
+    "descripcion": "Cambio de cable, jack o conectores en auriculares con cable.",
+    "precio": 12000
+  }
+]

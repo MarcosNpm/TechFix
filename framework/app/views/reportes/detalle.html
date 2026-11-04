@@ -1,0 +1,53 @@
+<include href="layouts/header.html" />
+
+<section class="page-hero">
+    <div class="contenedor">
+        <nav class="breadcrumb" aria-label="Miga de pan">
+            <a href="{{ @sitio_url }}">Inicio</a>
+            <span>›</span>
+            <a href="{{ @modulo_url }}/reportes">Reporte de stock</a>
+            <span>›</span>
+            <span>{{ @producto.nombre }}</span>
+        </nav>
+        <span class="eyebrow">Ruta dinámica · /reportes/@id</span>
+        <h1>{{ @producto.nombre }}</h1>
+        <p>{{ @producto.descripcion_corta }}</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="contenedor">
+        <div class="grid-2" style="align-items:start">
+            <div class="panel" style="text-align:center">
+                <img src="{{ @assets }}/img/{{ @producto.imagen }}"
+                     alt="{{ @producto.nombre }}"
+                     style="max-width:300px;width:100%;height:auto;border-radius:18px;background:#f4f7f9;padding:24px">
+            </div>
+
+            <div class="panel">
+                <span class="badge badge--cyan">{{ @producto.categoria }}</span>
+                <p style="font-size:1.6rem;font-weight:800;color:var(--primary);margin:14px 0 4px">{{ @producto.precio_formateado }}</p>
+                <p>
+                    <span class="product-card__stock {{ @producto.stock_clase }}">{{ @producto.stock_texto }}</span>
+                </p>
+
+                <h2>Descripción</h2>
+                <p>{{ @producto.descripcion }}</p>
+
+                <div class="form-actions" style="justify-content:flex-start">
+                    <a class="btn btn--primary" href="{{ @sitio_url }}">Ir a la tienda</a>
+                    <a class="btn btn--ghost" href="{{ @modulo_url }}/reportes">Volver al reporte</a>
+                </div>
+
+                <div class="tracking-note" style="margin-top:20px">
+                    <span>
+                        El parámetro <code>@id</code> de la ruta se valida en el controlador.
+                        Si no existe, el framework responde con HTTP 404.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<include href="layouts/footer.html" />

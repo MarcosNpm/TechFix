@@ -1,0 +1,14 @@
+# Módulo Fat-Free Framework · TP10 Parte B
+# Rutas amigables cuando el proyecto se publica con Apache.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # No reescribir archivos ni directorios existentes.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+# Si el hosting no permite rewrite, las rutas también funcionan así:
+#   framework/index.php?accion=...
