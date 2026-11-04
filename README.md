@@ -332,7 +332,7 @@ Se puede abrir directamente en <http://localhost/TechFix/clase5/index.php>.
 
 | Archivo | Contenido |
 | --- | --- |
-| `schema.sql` | DDL de 12 tablas, claves primarias, foráneas, índices y borrado lógico. |
+| `schema.sql` | DDL de 13 tablas, claves primarias, foráneas, índices y borrado lógico. |
 | `consultas.sql` | Datos de prueba y consultas `SELECT`, `JOIN`, agregaciones y actualizaciones. |
 | `NORMALIZACION.md` | Justificación de 1FN, 2FN y 3FN con ejemplos del modelo. |
 
@@ -639,7 +639,7 @@ Todas las evidencias están en `docs/capturas/` (31 imágenes).
 
 ## Flujo de Git
 
-El proyecto se desarrolló con una rama por etapa y commits descriptivos.
+El proyecto se desarrolló en una rama de trabajo con un commit descriptivo por etapa.
 
 ```text
 main
