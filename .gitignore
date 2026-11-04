@@ -1,0 +1,26 @@
+# Variables de entorno reales (nunca subir credenciales)
+.env
+.env.local
+.env.*.local
+
+# Dependencias y artefactos
+/vendor/
+/node_modules/
+/framework/vendor/
+*.log
+*.sqlite
+*.sqlite3
+
+# Archivos temporales de editores y del sistema
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Datos generados por la demo de Clase 5
+clase5/data/mensajes.json
+
+# Capturas temporales
+/tmp/
