@@ -8,8 +8,8 @@ JSON y dos módulos MVC.
 > **Alumno:** Núñez Marcos Agustín
 > **Materia:** Programación Web
 > **Trabajos:** TP3 a TP10
-> **Repositorio:** <https://github.com/MarcosNpm/Techfix>
-> **Sitio TP3 publicado:** <https://marcosnpm.github.io/Techfix/>
+> **Repositorio:** <https://github.com/MarcosNpm/TechFix>
+> **Sitio TP3 publicado:** <https://marcosnpm.github.io/TechFix/>
 
 ---
 
@@ -127,7 +127,7 @@ Con XAMPP, dentro de `htdocs`:
 
 ```bash
 cd C:/xampp/htdocs
-git clone https://github.com/MarcosNpm/Techfix.git TechFix
+git clone https://github.com/MarcosNpm/TechFix.git TechFix
 ```
 
 También se puede descomprimir el ZIP en `htdocs/TechFix`.
@@ -359,7 +359,7 @@ python3 -m http.server 8080
 | Pull Request y merge | Rama publicada y fusionada en `main` (ver [Flujo de Git](#flujo-de-git)). |
 | GitHub Pages | Flujo [`.github/workflows/pages.yml`](.github/workflows/pages.yml) e instrucciones en [`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md). |
 
-El sitio publicado queda en <https://marcosnpm.github.io/Techfix/> una vez activado GitHub
+El sitio publicado queda en <https://marcosnpm.github.io/TechFix/> una vez activado GitHub
 Pages con origen **GitHub Actions**.
 
 **Capturas**
@@ -837,7 +837,7 @@ git merge feature/migracion-php-ssi
   <https://www.figma.com/design/b1An3nGup8IbJxsslpADP1/Sin-t%C3%ADtulo?node-id=0-1&t=07vCYqtj2oXWJaKv-1>
   y se conserva como respaldo en `docs/TP3.pdf`.
 - La publicación en GitHub requiere credenciales del repositorio
-  <https://github.com/MarcosNpm/Techfix>. El historial local queda preparado con los
+  <https://github.com/MarcosNpm/TechFix>. El historial local queda preparado con los
   commits de cada TP.
 
 ---

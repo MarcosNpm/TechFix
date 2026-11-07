@@ -10,8 +10,8 @@ El repositorio contiene dos partes:
 
 ## 1. Repositorio
 
-- Repositorio: <https://github.com/MarcosNpm/Techfix>
-- Sitio publicado: <https://marcosnpm.github.io/Techfix/>
+- Repositorio: <https://github.com/MarcosNpm/TechFix>
+- Sitio publicado: <https://marcosnpm.github.io/TechFix/>
 
 El repositorio debe ser **público** para que GitHub Pages funcione en el plan gratuito.
 
@@ -19,7 +19,7 @@ El repositorio debe ser **público** para que GitHub Pages funcione en el plan g
 
 ## 2. Activar GitHub Pages (una sola vez)
 
-1. Entrar a <https://github.com/MarcosNpm/Techfix/settings/pages>.
+1. Entrar a <https://github.com/MarcosNpm/TechFix/settings/pages>.
 2. En **Build and deployment → Source**, elegir **GitHub Actions**.
 3. Ir a la pestaña **Actions** y ejecutar el flujo **Publicar TP3 en GitHub Pages**
    (o hacer un push a `main` que modifique `tp3-maquetacion/`).
@@ -41,7 +41,7 @@ git push -u origin feature/maquetacion
 
 Para abrir el Pull Request:
 
-<https://github.com/MarcosNpm/Techfix/compare/main...feature/maquetacion?expand=1>
+<https://github.com/MarcosNpm/TechFix/compare/main...feature/maquetacion?expand=1>
 
 Luego:
 
@@ -67,13 +67,13 @@ git push origin main
 
 ## 4. Verificación posterior
 
-- Abrir <https://marcosnpm.github.io/Techfix/> y recorrer las diez vistas.
+- Abrir <https://marcosnpm.github.io/TechFix/> y recorrer las diez vistas.
 - Comprobar que los enlaces del menú y del pie funcionan.
 - Revisar la consola del navegador: no debe haber errores 404.
 - Ejecutar Lighthouse sobre la URL publicada:
 
 ```bash
-npx lighthouse https://marcosnpm.github.io/Techfix/ --view
+npx lighthouse https://marcosnpm.github.io/TechFix/ --view
 ```
 
 ---
