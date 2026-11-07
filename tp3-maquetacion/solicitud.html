@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solicitud de reparación · TechFix</title>
+    <meta
+      name="description"
+      content="Completá los datos de tu equipo y contanos la falla. Te respondemos con un presupuesto en menos de 24 horas."
+    />
+    <meta name="author" content="Núñez Marcos Agustín" />
+    <meta name="theme-color" content="#1A1A2E" />
+    <meta property="og:title" content="Solicitud de reparación · TechFix" />
+    <meta
+      property="og:description"
+      content="Completá los datos de tu equipo y contanos la falla. Te respondemos con un presupuesto en menos de 24 horas."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <span class="topbar__item"
+          ><svg
+            class="icono"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Av. Rivadavia 1420, CABA</span
+        >
+        <span class="topbar__item d-none d-md-inline-flex"
+          ><svg
+            class="icono"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+          </svg>
+          Lun a Vie · 9 a 19 h · Sáb · 9 a 13 h</span
+        >
+        <a class="topbar__item" href="tel:+541155550101"
+          ><svg
+            class="icono"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="7" y="2" width="10" height="20" rx="2" />
+            <path d="M11 18h2" />
+          </svg>
+          +54 11 5555-0101</a
+        >
+      </div>
+    </div>
+
+    <header>
+      <nav class="navbar navbar-expand-lg bg-white sticky-top" aria-label="Navegación principal">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><span class="brand-mark" aria-hidden="true">TF</span><span>TechFix</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir menú de navegación"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="servicios.html">Servicios</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+              <li class="nav-item"><a class="nav-link" href="seguimiento.html">Seguimiento</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="sobre-el-taller.html">Sobre el taller</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+              <li class="nav-item">
+                <a class="nav-link d-inline-flex align-items-center gap-2" href="carrito.html">
+                  <svg
+                    class="icono"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <circle cx="9" cy="20" r="1" />
+                    <circle cx="18" cy="20" r="1" />
+                    <path d="M3 4h2l2.6 11.4a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 8H6" />
+                  </svg>
+                  Carrito
+                  <span class="badge-tf js-contador-carrito d-none">0</span>
+                </a>
+              </li>
+            </ul>
+            <a class="btn btn-primary ms-lg-3" href="solicitud.html">Pedir presupuesto</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="page-hero">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Miga de pan">
+            <a href="index.html">Inicio</a>
+            <svg
+              class="icono"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" /></svg
+            ><a href="servicios.html">Servicios</a>
+            <svg
+              class="icono"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" /></svg
+            ><span aria-current="page">Solicitud</span>
+          </nav>
+          <span class="eyebrow"
+            ><svg
+              class="icono"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+            </svg>
+            Paso 1 de 2</span
+          >
+          <h1>Solicitud de reparación</h1>
+          <p>
+            Contanos qué le pasa a tu equipo. El diagnóstico inicial no tiene costo y te respondemos
+            en menos de 24 horas.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row g-4 g-lg-4">
+            <div class="col-lg-8">
+              <div class="form-card">
+                <div class="alert alert-success d-none" data-exito role="status">
+                  <strong>¡Solicitud enviada!</strong> En esta demo estática no se envían datos,
+                  pero el formulario se validó correctamente.
+                  <a class="alert-link" href="confirmacion.html">Ver la pantalla de confirmación</a
+                  >.
+                </div>
+
+                <h2 class="h4 mb-1">Datos del equipo y del cliente</h2>
+                <p class="muted small mb-4">
+                  Los campos marcados con <span class="required-mark">*</span> son obligatorios.
+                </p>
+
+                <form class="needs-validation" data-formulario="solicitud" novalidate>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="nombre"
+                        >Nombre y apellido <span class="required-mark">*</span></label
+                      >
+                      <input
+                        class="form-control"
+                        id="nombre"
+                        name="nombre"
+                        type="text"
+                        autocomplete="name"
+                        minlength="3"
+                        maxlength="80"
+                        placeholder="Ana Pérez"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Ingresá tu nombre completo (mínimo 3 caracteres).
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="email"
+                        >Correo electrónico <span class="required-mark">*</span></label
+                      >
+                      <input
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="ana@correo.com"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Ingresá un correo válido, por ejemplo nombre@dominio.com.
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="telefono"
+                        >Teléfono <span class="required-mark">*</span></label
+                      >
+                      <input
+                        class="form-control"
+                        id="telefono"
+                        name="telefono"
+                        type="tel"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        pattern="[0-9+\s\(\)\-]{8,20}"
+                        data-mensaje="Usá entre 8 y 20 caracteres: números, espacios, paréntesis o guiones."
+                        placeholder="+54 11 5555-0101"
+                        required
+                        aria-describedby="telefonoAyuda"
+                      />
+                      <div class="form-text" id="telefonoAyuda">
+                        Con código de área. Solo números, espacios, paréntesis, guiones o +.
+                      </div>
+                      <div class="invalid-feedback">Ingresá un teléfono de contacto válido.</div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="modelo"
+                        >Modelo del equipo <span class="required-mark">*</span></label
+                      >
+                      <input
+                        class="form-control"
+                        id="modelo"
+                        name="modelo"
+                        type="text"
+                        minlength="2"
+                        maxlength="60"
+                        placeholder="Samsung Galaxy A54"
+                        required
+                      />
+                      <div class="invalid-feedback">Indicá marca y modelo del equipo.</div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="tipo"
+                        >Tipo de equipo <span class="required-mark">*</span></label
+                      >
+                      <select class="form-select" id="tipo" name="tipo" required>
+                        <option value="" selected disabled>Elegí una opción</option>
+                        <option value="celular">Celular</option>
+                        <option value="notebook">Notebook</option>
+                        <option value="pc">Computadora de escritorio</option>
+                        <option value="tablet">Tablet</option>
+                        <option value="otro">Otro equipo electrónico</option>
+                      </select>
+                      <div class="invalid-feedback">Seleccioná el tipo de equipo.</div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="fecha">Fecha preferida de entrega</label>
+                      <input
+                        class="form-control"
+                        id="fecha"
+                        name="fecha"
+                        type="date"
+                        aria-describedby="fechaAyuda"
+                      />
+                      <div class="form-text" id="fechaAyuda">
+                        Sujeta a disponibilidad del taller.
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label" for="falla"
+                        >Descripción de la falla <span class="required-mark">*</span></label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="falla"
+                        name="falla"
+                        rows="5"
+                        minlength="20"
+                        maxlength="600"
+                        placeholder="Contanos cuándo empezó, qué síntomas tiene y si el equipo enciende."
+                        required
+                        aria-describedby="fallaAyuda"
+                      ></textarea>
+                      <div class="form-text" id="fallaAyuda">
+                        Mínimo 20 caracteres. No incluyas contraseñas ni datos sensibles.
+                      </div>
+                      <div class="invalid-feedback">
+                        Describí la falla con al menos 20 caracteres.
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          id="terminos"
+                          name="terminos"
+                          type="checkbox"
+                          required
+                        />
+                        <label class="form-check-label" for="terminos">
+                          Acepto los términos y condiciones y el tratamiento de mis datos para
+                          gestionar la reparación. <span class="required-mark">*</span>
+                        </label>
+                        <div class="invalid-feedback">
+                          Tenés que aceptar los términos para continuar.
+                        </div>
+                      </div>
+                      <button
+                        class="btn btn-link btn-sm ps-0"
+                        type="button"
+                        id="terminosAyuda"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalTerminos"
+                      >
+                        Leer términos y condiciones
+                      </button>
+                    </div>
+
+                    <div class="col-12 d-flex flex-wrap gap-2 mt-4">
+                      <button class="btn btn-primary btn-lg" type="submit">
+                        Enviar solicitud
+                        <svg
+                          class="icono"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path d="M5 12h14" />
+                          <path d="m13 6 6 6-6 6" />
+                        </svg>
+                      </button>
+                      <a class="btn btn-outline-primary btn-lg" href="servicios.html"
+                        >Volver a servicios</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <aside class="col-lg-4" aria-label="Resumen de la solicitud">
+              <div class="summary mb-4">
+                <span class="badge-tf">Servicio seleccionado</span>
+                <h2 class="h5 mt-3">Cambio de pantalla</h2>
+                <p class="muted small">Celulares · Samsung Galaxy A54</p>
+                <div class="summary__row">
+                  <span>Precio orientativo</span><strong class="text-dark">$ 45.900</strong>
+                </div>
+                <div class="summary__row">
+                  <span>Tiempo estimado</span><strong class="text-dark">2 horas</strong>
+                </div>
+                <div class="summary__row">
+                  <span>Garantía</span><strong class="text-dark">90 días</strong>
+                </div>
+                <div class="summary__row summary__row--total">
+                  <span>Diagnóstico</span><span>Sin cargo</span>
+                </div>
+              </div>
+
+              <div class="detail-panel">
+                <h2 class="h6">Cómo sigue</h2>
+                <ol class="muted small ps-3 mb-0">
+                  <li class="mb-2">Revisamos tu solicitud y te contactamos.</li>
+                  <li class="mb-2">Coordinamos el turno para recibir el equipo.</li>
+                  <li class="mb-2">Diagnosticamos y enviamos el presupuesto final.</li>
+                  <li>Con tu aprobación, comenzamos la reparación.</li>
+                </ol>
+              </div>
+
+              <div class="ad-card mt-4">
+                <span class="badge-tf">Espacio publicitario</span>
+                <h3>¿Tu equipo no enciende?</h3>
+                <p>No hace falta que lo traigas: consultanos por WhatsApp y te orientamos.</p>
+                <a
+                  class="btn btn-outline-primary btn-sm"
+                  href="https://wa.me/541155550101"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><svg
+                    class="icono"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M20 12a8 8 0 0 1-11.8 7L4 20l1-4.1A8 8 0 1 1 20 12Z" />
+                    <path d="M9 9c0 4 3 6 5 6l2-2-2-1-1 1c-1 0-2-1-2-2l1-1-1-2-2 1Z" />
+                  </svg>
+                  Escribir ahora</a
+                >
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="modal fade"
+        id="modalTerminos"
+        tabindex="-1"
+        aria-labelledby="tituloTerminos"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title h5" id="tituloTerminos">Términos y condiciones</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                <strong>1. Diagnóstico.</strong> El diagnóstico inicial no tiene costo. El
+                presupuesto definitivo se informa después de revisar el equipo.
+              </p>
+              <p>
+                <strong>2. Aprobación.</strong> No se realizan reparaciones sin la aprobación
+                expresa del cliente.
+              </p>
+              <p>
+                <strong>3. Datos personales.</strong> Los datos se usan únicamente para gestionar la
+                reparación y no se comparten con terceros.
+              </p>
+              <p>
+                <strong>4. Garantía.</strong> La garantía cubre la mano de obra y el repuesto
+                instalado durante el plazo informado en la orden.
+              </p>
+              <p class="mb-0">
+                <strong>5. Retiro.</strong> Los equipos deben retirarse dentro de los 30 días
+                posteriores al aviso de finalización.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                Entendido
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a class="footer__brand" href="index.html">
+              <span class="brand-mark" aria-hidden="true">TF</span>
+              <span>TechFix</span>
+            </a>
+            <p>
+              Taller de reparación de celulares, computadoras y electrónica. Diagnóstico honesto,
+              repuestos de calidad y garantía escrita.
+            </p>
+            <div class="footer__social">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TechFix en Instagram"
+                ><svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r=".6" fill="currentColor" stroke="none" /></svg
+              ></a>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TechFix en Facebook"
+                ><svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M14 8h3V4h-3a5 5 0 0 0-5 5v3H6v4h3v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1Z"
+                  /></svg
+              ></a>
+              <a
+                href="https://wa.me/541155550101"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Escribir a TechFix por WhatsApp"
+                ><svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M20 12a8 8 0 0 1-11.8 7L4 20l1-4.1A8 8 0 1 1 20 12Z" />
+                  <path d="M9 9c0 4 3 6 5 6l2-2-2-1-1 1c-1 0-2-1-2-2l1-1-1-2-2 1Z" /></svg
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h2>Secciones</h2>
+            <ul class="footer__links">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="servicios.html">Servicios</a></li>
+              <li><a href="tienda.html">Tienda</a></li>
+              <li><a href="seguimiento.html">Seguimiento</a></li>
+              <li><a href="sobre-el-taller.html">Sobre el taller</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <h2>Servicios</h2>
+            <ul class="footer__links">
+              <li><a href="servicios.html">Celulares</a></li>
+              <li><a href="servicios.html">Computadoras</a></li>
+              <li><a href="servicios.html">Recuperación de datos</a></li>
+              <li><a href="servicios.html">Mantenimiento</a></li>
+              <li><a href="servicios.html">Electrónica</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3">
+            <h2>Contacto</h2>
+            <ul class="footer__contact">
+              <li>
+                <svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" /></svg
+                ><span>Av. Rivadavia 1420, CABA</span>
+              </li>
+              <li>
+                <svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect x="7" y="2" width="10" height="20" rx="2" />
+                  <path d="M11 18h2" /></svg
+                ><a href="tel:+541155550101">+54 11 5555-0101</a>
+              </li>
+              <li>
+                <svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m3 6 9 7 9-7" /></svg
+                ><a href="mailto:hola@techfix.com.ar">hola@techfix.com.ar</a>
+              </li>
+              <li>
+                <svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" /></svg
+                ><span>Lun a Vie · 9 a 19 h<br />Sáb · 9 a 13 h</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span data-anio>2026</span> TechFix · Núñez Marcos Agustín</p>
+          <p>Trabajo Práctico N.º 3 · Programación Web</p>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      id="tf-toasts"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/formularios.js" defer></script>
+  </body>
+</html>

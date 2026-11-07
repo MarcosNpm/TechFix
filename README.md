@@ -1,13 +1,15 @@
 # TechFix · Sitio web del taller de reparaciones
 
 Proyecto integrador de **Programación Web** para el taller **TechFix** (reparación de
-celulares, computadoras y electrónica). Reúne la migración a PHP, formularios seguros,
-base de datos relacional, CRUD con PDO, autenticación, una API JSON y dos módulos MVC.
+celulares, computadoras y electrónica). Reúne la maquetación estática del TP3, la migración
+a PHP, formularios seguros, base de datos relacional, CRUD con PDO, autenticación, una API
+JSON y dos módulos MVC.
 
 > **Alumno:** Núñez Marcos Agustín
 > **Materia:** Programación Web
-> **Trabajos:** TP4 a TP10
-> **Repositorio:** <https://github.com/MarcosNpm/Techfix>
+> **Trabajos:** TP3 a TP10
+> **Repositorio:** <https://github.com/MarcosNpm/TechFix>
+> **Sitio TP3 publicado:** <https://marcosnpm.github.io/TechFix/>
 
 ---
 
@@ -20,6 +22,7 @@ base de datos relacional, CRUD con PDO, autenticación, una API JSON y dos módu
 5. [Credenciales de prueba](#credenciales-de-prueba)
 6. [Estructura del proyecto](#estructura-del-proyecto)
 7. [Recorrido por los trabajos prácticos](#recorrido-por-los-trabajos-prácticos)
+   - [TP3 · Maquetación estática](#tp3--maquetación-estática)
    - [TP4 · Migración a PHP e includes](#tp4--migración-a-php-e-includes)
    - [TP5 · Formularios POST y GET](#tp5--formularios-post-y-get)
    - [TP6 · Base de datos y normalización](#tp6--base-de-datos-y-normalización)
@@ -124,7 +127,7 @@ Con XAMPP, dentro de `htdocs`:
 
 ```bash
 cd C:/xampp/htdocs
-git clone https://github.com/MarcosNpm/Techfix.git TechFix
+git clone https://github.com/MarcosNpm/TechFix.git TechFix
 ```
 
 También se puede descomprimir el ZIP en `htdocs/TechFix`.
@@ -212,6 +215,13 @@ Código de seguimiento de ejemplo: **TF-260901-A1B2C3**.
 
 ```
 TechFix/
+├── tp3-maquetacion/           # TP3 · sitio estático publicado en GitHub Pages
+│   ├── index.html             # y las otras nueve vistas HTML5
+│   ├── css/                   # Bootstrap 5.3.3 + estilos propios
+│   ├── js/                    # Interacciones y validaciones
+│   ├── img/                   # Ilustraciones y favicon SVG
+│   └── README.md              # Guía de la maquetación
+│
 ├── index.php                  # Inicio
 ├── servicios.php              # Listado de servicios
 ├── servicio.php               # Detalle de un servicio
@@ -289,9 +299,14 @@ TechFix/
 │   ├── lib/                   # Fat-Free 3.9.3 incluido
 │   └── .htaccess              # Rewrite para Apache
 │
+├── .github/workflows/
+│   └── pages.yml              # Publicación del TP3 en GitHub Pages
+│
 ├── docs/
-│   ├── capturas/              # Evidencias 01 a 31
+│   ├── capturas/              # Evidencias 01 a 34
 │   ├── TP3.pdf                # Prototipo de diseño
+│   ├── LIGHTHOUSE.md          # Auditoría de accesibilidad y rendimiento
+│   ├── DESPLIEGUE.md          # Pasos para publicar en GitHub Pages
 │   ├── TechFix_Documentacion_TP4-TP10.docx
 │   └── TechFix_Documentacion_TP4-TP10.pdf
 ├── .env.example
@@ -302,6 +317,60 @@ TechFix/
 ---
 
 ## Recorrido por los trabajos prácticos
+
+### TP3 · Maquetación estática
+
+**Carpeta:** [`tp3-maquetacion/`](tp3-maquetacion/) · **Rama:** `feature/maquetacion`
+
+Las diez secciones del TP3 están maquetadas en HTML5 con **Bootstrap 5.3.3** (servido
+localmente) y una hoja de estilos propia con la paleta del proyecto.
+
+| N.º | Vista | Archivo |
+| --- | --- | --- |
+| 1 | Inicio | [`tp3-maquetacion/index.html`](tp3-maquetacion/index.html) |
+| 2 | Servicios | [`tp3-maquetacion/servicios.html`](tp3-maquetacion/servicios.html) |
+| 3 | Detalles de reparación | [`tp3-maquetacion/servicio.html`](tp3-maquetacion/servicio.html) |
+| 4 | Solicitud de reparación | [`tp3-maquetacion/solicitud.html`](tp3-maquetacion/solicitud.html) |
+| 5 | Carrito | [`tp3-maquetacion/carrito.html`](tp3-maquetacion/carrito.html) |
+| 6 | Confirmación | [`tp3-maquetacion/confirmacion.html`](tp3-maquetacion/confirmacion.html) |
+| 7 | Seguimiento | [`tp3-maquetacion/seguimiento.html`](tp3-maquetacion/seguimiento.html) |
+| 8 | Tienda | [`tp3-maquetacion/tienda.html`](tp3-maquetacion/tienda.html) |
+| 9 | Sobre el taller | [`tp3-maquetacion/sobre-el-taller.html`](tp3-maquetacion/sobre-el-taller.html) |
+| 10 | Contacto | [`tp3-maquetacion/contacto.html`](tp3-maquetacion/contacto.html) |
+
+Para verlo en local:
+
+```bash
+cd tp3-maquetacion
+python3 -m http.server 8080
+# http://localhost:8080/index.html
+```
+
+**Requisitos cubiertos:**
+
+| Requisito | Implementación |
+| --- | --- |
+| `git init` y estructura base | Repositorio con `tp3-maquetacion/css`, `js` e `img`. |
+| Rama de trabajo | `feature/maquetacion`, fusionada en `main`. |
+| Diez vistas HTML5 | Las diez secciones del TP3, enlazadas entre sí. |
+| Bootstrap + estilos propios | Bootstrap 5.3.3 local + `css/estilos.css` con la identidad TechFix. |
+| Formato con Prettier | `.prettierrc`, `package.json` y scripts `format` / `format:check`. |
+| Auditoría Lighthouse | [`docs/LIGHTHOUSE.md`](docs/LIGHTHOUSE.md): 100 en accesibilidad, buenas prácticas y SEO. |
+| Pull Request y merge | Rama publicada y fusionada en `main` (ver [Flujo de Git](#flujo-de-git)). |
+| GitHub Pages | Flujo [`.github/workflows/pages.yml`](.github/workflows/pages.yml) e instrucciones en [`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md). |
+
+El sitio publicado queda en <https://marcosnpm.github.io/TechFix/> una vez activado GitHub
+Pages con origen **GitHub Actions**.
+
+**Capturas**
+
+| Vista | Captura |
+| --- | --- |
+| Inicio | `docs/capturas/32-tp3-maquetacion-inicio.png` |
+| Tienda | `docs/capturas/33-tp3-maquetacion-tienda.png` |
+| Seguimiento | `docs/capturas/34-tp3-maquetacion-seguimiento.png` |
+
+---
 
 ### TP4 · Migración a PHP e includes
 
@@ -643,7 +712,7 @@ Módulo **independiente** con rutas, controlador, modelo ORM y vistas.
 
 ## Capturas
 
-Todas las evidencias están en `docs/capturas/` (31 imágenes).
+Todas las evidencias están en `docs/capturas/` (34 imágenes).
 
 | # | Archivo | Contenido |
 | --- | --- | --- |
@@ -678,15 +747,22 @@ Todas las evidencias están en `docs/capturas/` (31 imágenes).
 | 29 | `29-tp4-includes-nav.png` | `nav.php` |
 | 30 | `30-tp4-includes-footer.png` | `footer.php` |
 | 31 | `31-tp4-config-env.png` | `config/env.php` |
+| 32 | `32-tp3-maquetacion-inicio.png` | TP3 · Inicio estático |
+| 33 | `33-tp3-maquetacion-tienda.png` | TP3 · Tienda estática |
+| 34 | `34-tp3-maquetacion-seguimiento.png` | TP3 · Seguimiento estático |
 
 ---
 
 ## Flujo de Git
 
-El proyecto se desarrolló en una rama de trabajo con un commit descriptivo por etapa.
+El proyecto se desarrolló con una rama por etapa y commits descriptivos.
 
 ```text
 main
+├── feature/maquetacion
+│   ├── TP3: estructura base, diez vistas y Bootstrap
+│   ├── TP3: formato con Prettier y correcciones de accesibilidad
+│   └── docs: informe de Lighthouse y despliegue
 └── feature/migracion-php-ssi
     ├── TP4: migración a PHP e includes
     ├── TP5: formularios POST y GET
@@ -700,6 +776,18 @@ main
 Comandos utilizados:
 
 ```bash
+# TP3
+git checkout -b feature/maquetacion
+git add tp3-maquetacion
+git commit -m "TP3: estructura base y diez vistas con Bootstrap"
+git commit -m "TP3: formato con Prettier y accesibilidad"
+git push -u origin feature/maquetacion
+# Pull Request: main ← feature/maquetacion
+git checkout main
+git merge --no-ff feature/maquetacion
+git push origin main
+
+# TP4 a TP10
 git checkout -b feature/migracion-php-ssi
 git add .
 git commit -m "TP4: migración a PHP con includes y títulos dinámicos"
@@ -749,7 +837,7 @@ git merge feature/migracion-php-ssi
   <https://www.figma.com/design/b1An3nGup8IbJxsslpADP1/Sin-t%C3%ADtulo?node-id=0-1&t=07vCYqtj2oXWJaKv-1>
   y se conserva como respaldo en `docs/TP3.pdf`.
 - La publicación en GitHub requiere credenciales del repositorio
-  <https://github.com/MarcosNpm/Techfix>. El historial local queda preparado con los
+  <https://github.com/MarcosNpm/TechFix>. El historial local queda preparado con los
   commits de cada TP.
 
 ---
