@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seguimiento de reparación · TechFix</title>
+    <meta
+      name="description"
+      content="Consultá el estado de tu reparación con el código de orden. Línea de estados y observaciones del técnico."
+    />
+    <meta name="author" content="Núñez Marcos Agustín" />
+    <meta name="theme-color" content="#1A1A2E" />
+    <meta property="og:title" content="Seguimiento de reparación · TechFix" />
+    <meta
+      property="og:description"
+      content="Consultá el estado de tu reparación con el código de orden. Línea de estados y observaciones del técnico."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <span class="topbar__item"
+          ><svg
+            class="icono"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Av. Rivadavia 1420, CABA</span
+        >
+        <span class="topbar__item d-none d-md-inline-flex"
+          ><svg
+            class="icono"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+          </svg>
+          Lun a Vie · 9 a 19 h · Sáb · 9 a 13 h</span
+        >
+        <a class="topbar__item" href="tel:+541155550101"
+          ><svg
+            class="icono"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="7" y="2" width="10" height="20" rx="2" />
+            <path d="M11 18h2" />
+          </svg>
+          +54 11 5555-0101</a
+        >
+      </div>
+    </div>
+
+    <header>
+      <nav class="navbar navbar-expand-lg bg-white sticky-top" aria-label="Navegación principal">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><span class="brand-mark" aria-hidden="true">TF</span><span>TechFix</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir menú de navegación"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+              <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="seguimiento.html"
+                  >Seguimiento</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sobre-el-taller.html">Sobre el taller</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+              <li class="nav-item">
+                <a class="nav-link d-inline-flex align-items-center gap-2" href="carrito.html">
+                  <svg
+                    class="icono"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <circle cx="9" cy="20" r="1" />
+                    <circle cx="18" cy="20" r="1" />
+                    <path d="M3 4h2l2.6 11.4a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 8H6" />
+                  </svg>
+                  Carrito
+                  <span class="badge-tf js-contador-carrito d-none">0</span>
+                </a>
+              </li>
+            </ul>
+            <a class="btn btn-primary ms-lg-3" href="solicitud.html">Pedir presupuesto</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="page-hero">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Miga de pan">
+            <a href="index.html">Inicio</a>
+            <svg
+              class="icono"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" /></svg
+            ><span aria-current="page">Seguimiento</span>
+          </nav>
+          <span class="eyebrow"
+            ><svg
+              class="icono"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-4-4" />
+            </svg>
+            Estado en tiempo real</span
+          >
+          <h1>Seguimiento de reparación</h1>
+          <p>
+            Ingresá el código de orden para conocer en qué etapa está tu equipo y qué observó el
+            técnico.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="form-card mb-4">
+                <h2 class="h4 mb-1">Consultar mi reparación</h2>
+                <p class="muted small mb-4">
+                  El código figura en el correo de confirmación y en el comprobante de la orden.
+                </p>
+
+                <form id="formSeguimiento" class="row g-3 align-items-end" novalidate>
+                  <div class="col-md-8">
+                    <label class="form-label" for="codigo"
+                      >Código de reparación <span class="required-mark">*</span></label
+                    >
+                    <input
+                      class="form-control form-control-lg"
+                      id="codigo"
+                      name="codigo"
+                      type="text"
+                      placeholder="TF-260901-A1B2C3"
+                      autocomplete="off"
+                      spellcheck="false"
+                      required
+                      aria-describedby="codigoAyuda"
+                    />
+                    <div class="form-text" id="codigoAyuda">
+                      Formato: TF-AAAAMMDD-XXXXXX. No distingue mayúsculas.
+                    </div>
+                  </div>
+                  <div class="col-md-4 d-grid">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                      <svg
+                        class="icono"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <circle cx="11" cy="11" r="7" />
+                        <path d="m20 20-4-4" />
+                      </svg>
+                      Consultar
+                    </button>
+                  </div>
+                </form>
+
+                <div class="mt-3">
+                  <button class="btn btn-outline-primary btn-sm" type="button" id="verEjemplo">
+                    Ver un ejemplo de seguimiento
+                  </button>
+                </div>
+              </div>
+
+              <div class="alert alert-danger d-none" id="errorSeguimiento" role="alert">
+                <strong>No encontramos ese código.</strong> Revisá que esté escrito correctamente.
+                Para la demo podés usar <strong>TF-260901-A1B2C3</strong>.
+              </div>
+
+              <div id="resultadoSeguimiento" class="d-none" aria-live="polite">
+                <div class="detail-panel mb-4">
+                  <div
+                    class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-3"
+                  >
+                    <div>
+                      <span class="badge-tf mb-2">Orden TF-260901-A1B2C3</span>
+                      <h2 class="h4 mb-1">Cambio de pantalla · Samsung Galaxy A54</h2>
+                      <p class="muted small mb-0">Ingresó el 01/09/2026 · Técnico: Marcos Núñez</p>
+                    </div>
+                    <span class="status-pill"
+                      ><svg
+                        class="icono"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path
+                          d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.8-2.8 2.4-2.8Z"
+                        />
+                      </svg>
+                      En reparación</span
+                    >
+                  </div>
+
+                  <label class="form-label" for="progreso">Avance de la reparación</label>
+                  <div
+                    class="progress mb-1"
+                    id="progreso"
+                    role="progressbar"
+                    aria-label="Avance de la reparación"
+                    aria-valuenow="60"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="height: 10px"
+                  >
+                    <div class="progress-bar" style="width: 60%; background-color: #007a92"></div>
+                  </div>
+                  <p class="form-text mb-4">Etapa 3 de 5 · Reparación en curso</p>
+
+                  <ol class="timeline">
+                    <li class="timeline__item timeline__item--done">
+                      <span class="timeline__dot"
+                        ><svg
+                          class="icono"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path d="m4 12 5 5L20 6" /></svg
+                      ></span>
+                      <div class="timeline__body">
+                        <span class="timeline__date">01/09/2026 · 09:15</span>
+                        <h3>Recibido</h3>
+                        <p>El equipo ingresó al taller y se registró la orden de servicio.</p>
+                      </div>
+                    </li>
+                    <li class="timeline__item timeline__item--done">
+                      <span class="timeline__dot"
+                        ><svg
+                          class="icono"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path d="m4 12 5 5L20 6" /></svg
+                      ></span>
+                      <div class="timeline__body">
+                        <span class="timeline__date">01/09/2026 · 14:40</span>
+                        <h3>Diagnóstico</h3>
+                        <p>Se confirmó el cambio de módulo. Presupuesto aprobado por el cliente.</p>
+                      </div>
+                    </li>
+                    <li class="timeline__item timeline__item--current" aria-current="step">
+                      <span class="timeline__dot"
+                        ><svg
+                          class="icono"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path
+                            d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.8-2.8 2.4-2.8Z"
+                          /></svg
+                      ></span>
+                      <div class="timeline__body">
+                        <span class="timeline__date">02/09/2026 · 10:20</span>
+                        <h3>Reparación</h3>
+                        <p>Se retiró el módulo dañado y se está instalando el repuesto original.</p>
+                      </div>
+                    </li>
+                    <li class="timeline__item">
+                      <span class="timeline__dot">4</span>
+                      <div class="timeline__body">
+                        <h3>Control de calidad</h3>
+                        <p>Prueba de táctil, colores, brillo y sensores antes de la entrega.</p>
+                      </div>
+                    </li>
+                    <li class="timeline__item">
+                      <span class="timeline__dot">5</span>
+                      <div class="timeline__body">
+                        <h3>Listo para retirar</h3>
+                        <p>Te avisamos por correo y WhatsApp cuando el equipo esté disponible.</p>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+
+                <div class="row g-4">
+                  <div class="col-md-7">
+                    <div class="detail-panel h-100">
+                      <h2 class="h6">Observaciones del técnico</h2>
+                      <p class="muted small mb-0">
+                        El equipo presenta golpe en la esquina inferior derecha. El marco está sano,
+                        por lo que no requiere reemplazo. Se recomienda colocar un film protector al
+                        retirar para evitar nuevas roturas.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="ad-card h-100">
+                      <span class="badge-tf">¿Necesitás ayuda?</span>
+                      <h3>Hablá con el taller</h3>
+                      <p>Si tenés dudas sobre el presupuesto o los plazos, escribinos.</p>
+                      <a class="btn btn-primary btn-sm" href="contacto.html"
+                        >Contactar
+                        <svg
+                          class="icono"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path d="M5 12h14" />
+                          <path d="m13 6 6 6-6 6" /></svg
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="cta-band">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-8">
+                <h2>¿Perdiste tu código de orden?</h2>
+                <p>Escribinos con el nombre y el modelo del equipo y te lo enviamos de nuevo.</p>
+              </div>
+              <div class="col-lg-4">
+                <div class="cta-band__actions">
+                  <a class="btn btn-primary btn-lg" href="contacto.html"
+                    >Contactar al taller
+                    <svg
+                      class="icono"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m13 6 6 6-6 6" /></svg
+                  ></a>
+                  <a class="btn btn-outline-primary" href="index.html">Volver al inicio</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a class="footer__brand" href="index.html">
+              <span class="brand-mark" aria-hidden="true">TF</span>
+              <span>TechFix</span>
+            </a>
+            <p>
+              Taller de reparación de celulares, computadoras y electrónica. Diagnóstico honesto,
+              repuestos de calidad y garantía escrita.
+            </p>
+            <div class="footer__social">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TechFix en Instagram"
+                ><svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r=".6" fill="currentColor" stroke="none" /></svg
+              ></a>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TechFix en Facebook"
+                ><svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M14 8h3V4h-3a5 5 0 0 0-5 5v3H6v4h3v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1Z"
+                  /></svg
+              ></a>
+              <a
+                href="https://wa.me/541155550101"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Escribir a TechFix por WhatsApp"
+                ><svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M20 12a8 8 0 0 1-11.8 7L4 20l1-4.1A8 8 0 1 1 20 12Z" />
+                  <path d="M9 9c0 4 3 6 5 6l2-2-2-1-1 1c-1 0-2-1-2-2l1-1-1-2-2 1Z" /></svg
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h2>Secciones</h2>
+            <ul class="footer__links">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="servicios.html">Servicios</a></li>
+              <li><a href="tienda.html">Tienda</a></li>
+              <li><a href="seguimiento.html">Seguimiento</a></li>
+              <li><a href="sobre-el-taller.html">Sobre el taller</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <h2>Servicios</h2>
+            <ul class="footer__links">
+              <li><a href="servicios.html">Celulares</a></li>
+              <li><a href="servicios.html">Computadoras</a></li>
+              <li><a href="servicios.html">Recuperación de datos</a></li>
+              <li><a href="servicios.html">Mantenimiento</a></li>
+              <li><a href="servicios.html">Electrónica</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3">
+            <h2>Contacto</h2>
+            <ul class="footer__contact">
+              <li>
+                <svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" /></svg
+                ><span>Av. Rivadavia 1420, CABA</span>
+              </li>
+              <li>
+                <svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect x="7" y="2" width="10" height="20" rx="2" />
+                  <path d="M11 18h2" /></svg
+                ><a href="tel:+541155550101">+54 11 5555-0101</a>
+              </li>
+              <li>
+                <svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m3 6 9 7 9-7" /></svg
+                ><a href="mailto:hola@techfix.com.ar">hola@techfix.com.ar</a>
+              </li>
+              <li>
+                <svg
+                  class="icono"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" /></svg
+                ><span>Lun a Vie · 9 a 19 h<br />Sáb · 9 a 13 h</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span data-anio>2026</span> TechFix · Núñez Marcos Agustín</p>
+          <p>Trabajo Práctico N.º 3 · Programación Web</p>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      id="tf-toasts"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/seguimiento.js" defer></script>
+  </body>
+</html>
