@@ -1,0 +1,13 @@
+{
+  "name": "techfix-tp3-maquetacion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Maquetación estática del TP3 de Programación Web: diez vistas HTML5 con Bootstrap y estilos propios.",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.9.0"
+  }
+}
